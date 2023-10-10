@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-#define FILE_NAME __FILE__
 
 /**
  * main - Entry point of the program
@@ -11,7 +10,7 @@
  */
 int main(void)
 {
-	printf(__FILE__ "\n");
+	printf("%s",__FILE__);
 
 	return (0);
 }
