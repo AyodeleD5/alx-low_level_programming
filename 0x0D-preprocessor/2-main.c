@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	printf("%s",__FILE__);
+	printf(__FILE__ "\n");
 
 	return (0);
 }
