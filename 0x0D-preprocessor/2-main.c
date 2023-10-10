@@ -11,7 +11,7 @@
  */
 int main(void)
 {
-	printf("%s\n", FILE_NAME);
+	printf(__FILE__ "\n");
 
 	return (0);
 }
