@@ -1,21 +1,15 @@
-section .data
-	format db "Hello, Holberton", 0
-	printf_format db "%s", 0
+	SECTION .data
+msg:	db "Hello, Holberton", 0
+fmt:	db "%s", 10, 0
 
-section .text
+	SECTION .text
 	extern printf
-
-global main
-
+	global main
 main:
-	sub rsp, 8
-	mov rdi, printf_format
-	mov rsi, format
-	xor rax, rax
+	mov esi, msg
+	mov edi, fmt
+	mov eax, 0
 	call printf
 
-	mov eax, 60
-	xor edi, edi
-	syscall
-
-section .note.GNU-stack:
+	mov eax, 0
+	ret
