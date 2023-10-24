@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+/**
+ * main - adds positive numbers
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0
+ */
 int main(int argc, char *argv[]) {
     if (argc == 1) {
         printf("0\n");
