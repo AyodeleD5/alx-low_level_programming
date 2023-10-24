@@ -1,47 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include <ctype.h>
 /**
- * main - adds positive numbers
- * @argc: argument count
- * @argv: argument vector
- * Return: 0
+ * main - adds positive numbers.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
  */
-int main(int argc, char *argv[]) {
-    if (argc == 1) {
-        printf("0\n");
-        return 0;
-    }
+int main(int argc, char *argv[])
+{
+	int i, j, add = 0;
 
-    int sum = 0;
-
-    for (int i = 1; i < argc; i++) {
-        char *arg = argv[i];
-
-        // Check if the argument contains only digits
-        bool isPositive = true;
-        for (int j = 0; arg[j] != '\0'; j++) {
-            if (arg[j] < '0' || arg[j] > '9') {
-                isPositive = false;
-                break;
-            }
-        }
-
-        if (!isPositive) {
-            printf("Error\n");
-            return 1;
-        }
-
-        int num = atoi(arg);
-        if (num <= 0) {
-            printf("Error\n");
-            return 1;
-        }
-
-        sum += num;
-    }
-
-    printf("%d\n", sum);
-    return 0;
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+		add += atoi(argv[i]);
+	}
+	printf("%d\n", add);
+	return (0);
 }
-
