@@ -1,34 +1,33 @@
 #include <stdio.h>
-
 /**
- * main - Entry point
- * Return: Always 0 (success)
+* main - Entry point
+*
+* Return: Always 0
 */
-
 int main(void)
 {
-	int i;
-	int j;
+	int num1;
+	int num2;
 
-	for (i = 0; j < 100; j++)
+	for (num1 = 0; num1 < 100; num1++)
 	{
-		for (j = i; j < 100; j++)
+		for (num2 = 0; num2 < 100; num2++)
 		{
-			if (i != j)
+			if (num1 < num2)
 			{
-				putchar(i / 10 + '0');
-				putchar(i % 10 + '0');
+				putchar((num1 / 10) + 48);
+				putchar((num1 % 10) + 48);
 				putchar(' ');
-				putchar(j / 10 + '0');
-				putchar(j % 10 + '0');
-				if (i != 98 || j != 99)
+				putchar((num2 / 10) + 48);
+				putchar((num2 % 10) + 48);
+				if (num1 != 98 || num2 != 99)
 				{
 					putchar(',');
-					putchar(' ');
+					putchar (' ');
 				}
 			}
 		}
 	}
-	putchar('\n');
-	return (0);
+putchar('\n');
+return (0);
 }
